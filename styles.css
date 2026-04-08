@@ -1,0 +1,135 @@
+/* VARIABLES Y ESTILOS GLOBALES */
+:root {
+    --fondo-claro: #FEF9E6;      /* crema suave */
+    --contenedor-base: #FFE0B2;   /* naranja claro */
+    --contenedor-hover: #FFD180;
+    --sombra-normal: 0 8px 20px rgba(0, 0, 0, 0.08);
+    --sombra-elevada: 0 18px 30px rgba(0, 0, 0, 0.15);
+    --border-radius-card: 20px;
+    --transition-hover: all 0.25s ease-in-out;
+  }
+  
+  body {
+    background-color: var(--fondo-claro);
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+  }
+  
+  /* NAVBAR con fondo ligeramente más oscuro pero dentro de la paleta */
+  .navbar {
+    background-color: #FFE8CC;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar-brand {
+    color: #B45F1B;
+    font-weight: 600;
+  }
+  
+  /* CARDS PRINCIPALES (contenedores con borde redondeado, sombra y hover) */
+  .card, .kpi-card {
+    background-color: var(--contenedor-base);
+    border: none;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--sombra-normal);
+    transition: var(--transition-hover);
+    overflow: hidden;
+  }
+  
+  /* Efecto hover: elevar y sombra más pronunciada */
+  .card:hover, .kpi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-elevada);
+    background-color: var(--contenedor-hover);
+    transition: var(--transition-hover);
+  }
+  
+  /* Aseguramos que la card de la tabla también herede el efecto */
+  .table-container-card {
+    background-color: var(--contenedor-base);
+    border-radius: var(--border-radius-card);
+  }
+  
+  /* Estilo específico para tarjetas KPI (evitar que el hover afecte negativamente al interior) */
+  .kpi-card .card-body {
+    padding: 1rem;
+  }
+  
+  .kpi-card i {
+    color: #B45F1B;
+  }
+  
+  /* Tabla personalizada */
+  .table {
+    margin-bottom: 0;
+    background-color: transparent;
+  }
+  
+  .table thead th {
+    background-color: #FFD7A0;
+    color: #5C3A0E;
+    border-bottom: 2px solid #FFC77A;
+  }
+  
+  .table tbody tr:hover {
+    background-color: rgba(255, 245, 220, 0.7);
+  }
+  
+  /* Imágenes dentro de tabla */
+  .product-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #FFF3E0;
+    padding: 4px;
+    border: 1px solid #FFC77A;
+  }
+  
+  /* Botones personalizados */
+  .btn-primary {
+    background-color: #E67E22;
+    border-color: #D35400;
+  }
+  
+  .btn-primary:hover {
+    background-color: #D35400;
+    border-color: #A04000;
+  }
+  
+  .btn-outline-secondary {
+    border-color: #E67E22;
+    color: #E67E22;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #E67E22;
+    border-color: #E67E22;
+    color: white;
+  }
+  
+  /* Modal con fondo más oscuro (respetando paleta) */
+  .custom-modal .modal-content {
+    background-color: #FFE0B2;
+    border-radius: 24px;
+    border: none;
+    box-shadow: var(--sombra-elevada);
+  }
+  
+  .custom-modal .modal-header,
+  .custom-modal .modal-footer {
+    border-color: #FFC77A;
+  }
+  
+  /* Responsive ajustes */
+  @media (max-width: 768px) {
+    .card, .kpi-card {
+      border-radius: 16px;
+    }
+    .display-6 {
+      font-size: 1.8rem;
+    }
+    .product-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
